@@ -13,6 +13,7 @@ log = logging.getLogger("client")
 
 class BrightNetworkHiringChallengeClient:
     """Hiring Challenge API Client leveraging HTTPX"""
+
     def __init__(self) -> None:
         self._client = httpx.Client(base_url=_API_BASE_URL)
 

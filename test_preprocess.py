@@ -9,8 +9,7 @@ def _members_test_data(
 
 
 def _jobs_test_data(
-    second_job_title: str = "Financial advisor",
-    second_job_location: str = "Hamilton"
+    second_job_title: str = "Financial advisor", second_job_location: str = "Hamilton"
 ) -> list[dict]:
     return [
         {"title": "Solicitor", "location": "Hamilton"},
@@ -36,7 +35,9 @@ def test_members_unknown_location() -> None:
 
 
 def test_members_unknown_job() -> None:
-    processed_members = preprocess.members(_members_test_data(job="mechanical engineer"))
+    processed_members = preprocess.members(
+        _members_test_data(job="mechanical engineer")
+    )
     assert processed_members["John Doe"].jobs == set()
 
 
